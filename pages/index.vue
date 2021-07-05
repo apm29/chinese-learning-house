@@ -5,7 +5,7 @@
       class="
         w-screen
         shadow-lg
-        bg-gray-500
+        bg-purple-900
         px-2
         fixed
         top-0
@@ -13,7 +13,7 @@
         right-0
         text-white
         transition-all
-        bg-opacity-0
+        bg-opacity-20
         flex
         items-center
         z-20
@@ -54,7 +54,7 @@ export default {
 
   methods: {
     onScroll(e) {
-      const opacity = e.target.scrollTop / 500
+      const opacity = e.target.scrollTop / 500 + 0.2
       const headerStyle = document.getElementById('header').style
       headerStyle.setProperty(
         'background-color',

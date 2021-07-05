@@ -1,7 +1,10 @@
+import tailwindTypography from '@tailwindcss/typography'
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
+  docs: {
+    primaryColor: '#E24F55'
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'chinese-learning-house',
@@ -39,8 +42,6 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
   ],
@@ -48,17 +49,22 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
-  // PWA module configuration: https://go.nuxtjs.dev/pwa
-  pwa: {
-    manifest: {
-      lang: 'en'
+
+  // Content module configuration: https://go.nuxtjs.dev/config-content
+  content: {
+    markdown: {
+      prism: {
+        theme: 'prism-themes/themes/prism-material-oceanic.css'
+      }
     }
   },
 
-  // Content module configuration: https://go.nuxtjs.dev/config-content
-  content: {},
-
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+  tailwindcss: {
+    config: {
+      plugins: [tailwindTypography]
+    }
+  },
 }
