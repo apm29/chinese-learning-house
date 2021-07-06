@@ -19,12 +19,24 @@ export default {
     ]
   },
 
+  router: {
+    extendRoutes (routes, resolve) {
+      console.log(JSON.stringify(routes))
+      return routes;
+    }
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    "~assets/css/global.css",
+    "~assets/css/materialdesignicons/css/materialdesignicons.min.css",
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    {
+      src: "~plugins/filters.js"
+    }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
