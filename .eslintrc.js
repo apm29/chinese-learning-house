@@ -14,11 +14,14 @@ module.exports = {
   rules: {
     'vue/component-definition-name-casing': 'off',
     'no-console': 'off',
+    'import/no-named-as-default': 'off',
+    'no-new': 'off',
     'import/namespace': 'off',
     'object-shorthand': 'off',
     'vue/no-unused-vars': 'warn',
     'vue/valid-template-root': 'warn',
     'vue/require-v-for-key': 'warn',
     'require-await': 'warn',
+    'no-unused-vars': 'warn',
   },
 }
