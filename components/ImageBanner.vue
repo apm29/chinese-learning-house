@@ -47,7 +47,8 @@ export default {
       loop: true,
       autoplay: {
         delay: 4200,
-        pauseOnMouseEnter: true
+        pauseOnMouseEnter: true,
+        disableOnInteraction: false,
       },
 
       effect: 'coverflow',
@@ -70,7 +71,7 @@ export default {
         el.classList.add('animate-pulse-once')
         setTimeout(() => {
           el.classList.remove('animate-pulse-once')
-        }, 1200)
+        }, 1800)
       })
     }
     replayAnimation.call(this)
@@ -110,14 +111,13 @@ export default {
   @apply text-purple-300
 }
 .banner .animate-pulse-once{
-  animation: pulse-once 1.2s;
+  animation:pulse-once 1.4s  ease-in 0s 1 normal none running ;
 }
 @keyframes pulse-once {
   0% {
     transform: scale(1.2,1.2);
     transform-origin: 0 0;
   }
-
   40% {
     transform: scale(1.2,1.2);
     transform-origin: 0 0;
