@@ -79,6 +79,7 @@ module.exports = {
       divideStyle: ["responsive"],
       divideWidth: ["responsive"],
       fill: ["responsive"],
+      filter: ["responsive","hover"],
       flex: ["responsive"],
       flexDirection: ["responsive"],
       flexGrow: ["responsive"],

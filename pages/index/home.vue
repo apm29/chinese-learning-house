@@ -5,6 +5,9 @@
 <script>
 export default {
   name: 'home',
+  asyncData({ redirect }) {
+    redirect({path:"/"})
+  }
 }
 </script>
 
