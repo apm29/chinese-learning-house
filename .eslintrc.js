@@ -18,6 +18,8 @@ module.exports = {
     'no-new': 'off',
     'import/namespace': 'off',
     'object-shorthand': 'off',
+    'no-unused-expressions': 'warn',
+    'prefer-const': 'warn',
     'vue/no-unused-vars': 'warn',
     'vue/valid-template-root': 'warn',
     'vue/require-v-for-key': 'warn',

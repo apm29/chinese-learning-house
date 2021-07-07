@@ -1,15 +1,17 @@
 <template>
-  <div class='banner w-full overflow-hidden md:h-96 h:72 bg-gray-600 relative'>
-    <div class='swiper-wrapper'>
+  <div class='banner w-full overflow-hidden md:h-96 h-72 bg-gray-600 relative'>
+    <div ref='slide' class='swiper-wrapper'>
       <div
         v-for='image of images'
         :key='image.url'
         :style='{backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${image.url})`,backgroundSize:"100% auto"}'
-        class='swiper-slide object-cover bg-no-repeat'
+        class='swiper-slide object-cover bg-no-repeat animate-pulse-once overflow-x-hidden'
       >
-        <h2 class='uppercase absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 text-3xl md:text-6xl font-bold text-white'>{{image.title}}</h2>
+        <h2 class='select-none uppercase absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 text-3xl md:text-6xl font-bold text-white'>{{image.title}}</h2>
       </div>
     </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
     <div class='swiper-pagination'></div>
   </div>
 </template>
@@ -35,10 +37,11 @@ export default {
           title:'It is easier to get forgiveness than permission.'
         }
       ],
+      swiper: null
     }
   },
   mounted() {
-    const swiper = new Swiper('.banner', {
+    this.swiper = new Swiper('.banner', {
       // Optional parameters
       direction: 'horizontal',
       loop: true,
@@ -46,6 +49,8 @@ export default {
         delay: 4200,
         pauseOnMouseEnter: true
       },
+
+      effect: 'slide',
 
       // If we need pagination
       pagination: {
@@ -60,18 +65,63 @@ export default {
       }
     })
 
+    this.swiper.on("slideChange",(swiper)=>{
+      this.$refs.slide.children.forEach(el=>{
+        el.classList.add("animate-pulse-once")
+        setTimeout(()=>{
+          el.classList.remove("animate-pulse-once")
+        },1200)
+      })
+    })
+
   }
 }
 </script>
 
 <style>
-.swiper-pagination .swiper-pagination-bullet {
-  background-color: #444444;
-  width: 12px;
-  height: 12px;
+.banner > .swiper-pagination{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner > .swiper-pagination > .swiper-pagination-bullet {
+  background-color: rgba(255,255,255,0.7);
+  width: 10px;
+  height: 10px;
+  transition: all 0.2s;
 }
 
-.swiper-pagination .swiper-pagination-bullet-active {
+.banner > .swiper-pagination > .swiper-pagination-bullet-active {
   background-color: white;
+  width: 14px;
+  height: 14px;
+}
+.swiper-button-next {
+  --swiper-navigation-size: 1.5rem;
+  @apply text-purple-300;
+}
+
+.swiper-button-prev {
+  --swiper-navigation-size: 1.5rem;
+  @apply text-purple-300
+}
+.banner .animate-pulse-once{
+  animation: pulse-once 1.2s;
+}
+@keyframes pulse-once {
+  0% {
+    transform: scale(1.3,1.3);
+    transform-origin: 0 0;
+  }
+
+  40% {
+    transform: scale(1.3,1.3);
+    transform-origin: 0 0;
+  }
+
+  100%{
+    transform: scale(1.0,1.0);
+    transform-origin: 0 0;
+  }
 }
 </style>
