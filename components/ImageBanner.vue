@@ -5,7 +5,7 @@
         v-for='image of images'
         :key='image.url'
         :style='{backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${image.url})`,backgroundSize:"100% auto"}'
-        class='swiper-slide object-cover bg-no-repeat animate-pulse-once overflow-x-hidden'
+        class='swiper-slide object-cover bg-no-repeat overflow-x-hidden'
       >
         <h2 class='select-none uppercase absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 text-3xl md:text-6xl font-bold text-white'>{{image.title}}</h2>
       </div>
@@ -50,7 +50,7 @@ export default {
         pauseOnMouseEnter: true
       },
 
-      effect: 'slide',
+      effect: 'coverflow',
 
       // If we need pagination
       pagination: {
@@ -65,13 +65,17 @@ export default {
       }
     })
 
-    this.swiper.on("slideChange",(swiper)=>{
-      this.$refs.slide.children.forEach(el=>{
-        el.classList.add("animate-pulse-once")
-        setTimeout(()=>{
-          el.classList.remove("animate-pulse-once")
-        },1200)
+    function replayAnimation() {
+      this.$refs.slide?.children?.forEach(el => {
+        el.classList.add('animate-pulse-once')
+        setTimeout(() => {
+          el.classList.remove('animate-pulse-once')
+        }, 1200)
       })
+    }
+    replayAnimation.call(this)
+    this.swiper.on("slideChange",(swiper)=>{
+      replayAnimation.call(this)
     })
 
   }
@@ -110,12 +114,12 @@ export default {
 }
 @keyframes pulse-once {
   0% {
-    transform: scale(1.3,1.3);
+    transform: scale(1.2,1.2);
     transform-origin: 0 0;
   }
 
   40% {
-    transform: scale(1.3,1.3);
+    transform: scale(1.2,1.2);
     transform-origin: 0 0;
   }
 
