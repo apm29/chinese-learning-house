@@ -42,7 +42,7 @@ export default {
   --tw-blur:blur(1px);
 }
 .img-hover-blur:hover{
-  animation:animation-hover-blur 0.4s  ease-in 0s 1 normal none running;
+  animation:animation-hover-blur 0.8s  ease-in 0s 1 normal none running;
 }
 @keyframes animation-hover-blur {
   0% {

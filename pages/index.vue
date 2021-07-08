@@ -43,7 +43,7 @@
         Contact
       </NuxtLink>
     </div>
-    <div id='scroll-content' class='w-screen h-screen overflow-y-scroll' @scroll='onScroll'>
+    <div id='scroll-content' class='w-screen h-screen overflow-y-auto' @scroll='onScroll'>
       <NuxtChild></NuxtChild>
     </div>
   </div>
