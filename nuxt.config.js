@@ -18,12 +18,16 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-
+  server: {
+    port: 3000, // default: 3000
+    host: '0.0.0.0', // default: localhost,
+  },
   router: {
     extendRoutes (routes, resolve) {
       console.log(JSON.stringify(routes))
       return routes;
-    }
+    },
+    base: process.env.NODE_ENV === "production"? "/clh":"/"
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
