@@ -24,7 +24,7 @@
                @click='$router.replace({name:"index-post-page",params:{ page:page+1 }})'>NEXT
           </div>
         </div>
-        <ContactSliver/>
+        <ContactSliver />
       </div>
     </div>
   </div>
@@ -43,13 +43,13 @@ export default {
 
     const pageSize = 10
     const page = parseInt(route.params.page)
-    const articles = await $content('/', { text: true, deep: true }).
+    const articles = await $content('', { text: true, deep: true }).
       only(['title', 'path', 'toc', 'text', 'createAt']).
       skip(pageSize * (page - 1)).
       limit(pageSize).
       sortBy('createAt', 'desc').
       fetch()
-    const total = await $content('/', { text: true, deep: true }).only([]).fetch()
+    const total = await $content('', { text: true, deep: true }).only([]).fetch()
 
     return {
       articles,

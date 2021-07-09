@@ -1,6 +1,6 @@
 <template>
   <div class='relative'>
-    <img src='/study.jpg' class='md:h-96 h-80 object-cover w-full relative' />
+    <img src='study.jpg' class='md:h-96 h-80 object-cover w-full relative' />
     <div
       class='
           font-bold

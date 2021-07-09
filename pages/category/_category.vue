@@ -22,7 +22,7 @@ export default {
   name: 'CategoryDetail',
   components: { ArticleModule, CompanyModule, PostTop, ContactSliver },
   async asyncData({ $content, route }) {
-    const res = await $content("/",{
+    const res = await $content("",{
       text:true,
       deep:true,
     }).search(route.params.category).fetch()
