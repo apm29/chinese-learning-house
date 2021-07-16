@@ -6,23 +6,31 @@
       <div v-if='articles' class='tw-flex tw-flex-col tw-items-stretch  tw-w-screen md:tw-w-4/5 tw-overflow-x-hidden'>
         <ArticleModule :articles='articles' />
         <div class='tw-flex tw-font-bold tw-text-gray-300 tw-text-2xl tw-justify-end tw-mx-8'>
-          <div
+          <NuxtLink
             v-if='page>1'
+            :to='{name:"index-post-page",params:{ page:page-1 }}'
             class='tw-mx-2 tw-cursor-pointer tw-hover:underline tw-hover:text-red-400'
-            @click='$router.replace({name:"index-post-page",params:{ page:page-1 }})'
+            replace
+            tag='div'
           >PREV
-          </div>
-          <div
-            v-for='pageIndex in pageTotal' :key='pageIndex'
+          </NuxtLink>
+          <NuxtLink
+            v-for='pageIndex in pageTotal'
+            :key='pageIndex' :class='pageIndex === page?"tw-text-black":""'
+            :to='{name:"index-post-page",params:{ page:pageIndex }}'
             class='tw-mx-2 tw-cursor-pointer tw-hover:underline tw-hover:text-red-400'
-            :class='pageIndex === page?"tw-text-black":""'
-            @click='$router.replace({name:"index-post-page",params:{ page:pageIndex }})'
+            replace
+            tag='div'
           >
             {{ pageIndex }}
-          </div>
-          <div v-if='page<pageTotal' class='mx-2 cursor-pointer hover:underline hover:text-red-400'
-               @click='$router.replace({name:"index-post-page",params:{ page:page+1 }})'>NEXT
-          </div>
+          </NuxtLink>
+          <NuxtLink
+            v-if='page<pageTotal' :to='{name:"index-post-page",params:{ page:page+1 }}'
+            class='mx-2 cursor-pointer hover:underline hover:text-red-400'
+            replace
+            tag='div'
+          >NEXT
+          </NuxtLink>
         </div>
         <ContactSliver />
       </div>
@@ -34,7 +42,7 @@
 import ContactSliver from '~/components/ContactSliver'
 import PostTop from '~/components/PostTop'
 import CompanyModule from '~/components/CompanyModule'
-import ArticleModule from '~/pages/index/post/ArticleModule'
+import ArticleModule from '~/components/ArticleModule'
 
 export default {
   name: 'Page',

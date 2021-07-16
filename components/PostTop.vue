@@ -15,15 +15,19 @@
           md:tw-text-6xl tw-text-4xl
         '
     >
-      Building a Culture of Excellence
+      {{ title  || 'Building a Culture of Excellence'}}
       <div class='tw-font-light tw-text-xl'>
-        Vestibulum volutpat pretium libero. Suspendisse eu ligula.
+        {{ subtitle  || 'Vestibulum volutpat pretium libero. Suspendisse eu ligula.'}}
       </div>
     </div>
   </div>
 </template>
 <script>
 export default {
-  name: 'PostTop'
+  name: 'PostTop',
+  props:{
+    title: String,
+    subtitle: String
+  }
 }
 </script>

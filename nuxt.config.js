@@ -6,7 +6,8 @@ export default {
     primaryColor: '#E24F55'
   },
   generate:{
-    dir: "dist"
+    dir: "dist",
+    crawler: true
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -26,9 +27,8 @@ export default {
     host: '0.0.0.0', // default: localhost,
   },
   router: {
-    extendRoutes (routes, resolve) {
-      console.log(JSON.stringify(routes))
-      return routes;
+    extendRoutes(routes, resolve) {
+      return routes
     },
     base: process.env.NODE_ENV === "production"? "/":"/"
   },

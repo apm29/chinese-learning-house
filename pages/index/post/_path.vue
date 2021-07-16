@@ -1,20 +1,22 @@
 <template>
-  <div class='pt-20 bg-white' style='height: 3000px'>
-    <article  class="prose prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto">
-      <h1>{{ page.title }}</h1>
-      <nuxt-content class="prose prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto"
+  <div class='tw-bg-white'>
+    <PostTop :title='page.title'/>
+    <article  class="tw-prose tw-pt-10 tw-prose-sm sm:tw-prose lg:tw-prose-lg xl:tw-prose-2xl tw-mx-auto">
+      <nuxt-content class="tw-prose tw-prose-sm sm:tw-prose lg:tw-prose-lg xl:tw-prose-2xl tw-mx-auto"
                     :document="page" />
     </article>
+    <ContactSliver/>
   </div>
 
 </template>
 
 <script>
+import ContactSliver from '~/components/ContactSliver'
+import PostTop from '~/components/PostTop'
 export default {
-  props:["path"],
+  components: { PostTop, ContactSliver },
   async asyncData ({ $content,route }) {
     const page = await $content(route.params.path).fetch()
-
     return {
       page
     }

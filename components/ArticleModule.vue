@@ -3,8 +3,9 @@
    <div v-for='article of articles' :key='article.path'
         class='tw-px-4 md:tw-px-0'>
      <article class='tw-text-left tw-flex-col tw-flex tw-prose tw-items-stretch'>
-       <h3 class='hover:tw-cursor-pointer hover:tw-text-red-500'
-           @click='$router.push({name:"index-post-path",params:{path:article.path}})'>{{ article.title }}</h3>
+       <NuxtLink class='hover:tw-cursor-pointer hover:tw-text-red-500' :to='{name:"index-post-path",params:{path:article.path.replace("/","")}}' tag='h3'>
+         {{ article.title }}
+       </NuxtLink>
        <p v-if='article.text' class='tw-font-normal'>
          {{ article.text.substr(0, 300) }}...
        </p>
