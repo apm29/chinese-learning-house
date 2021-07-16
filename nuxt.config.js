@@ -5,6 +5,9 @@ export default {
   docs: {
     primaryColor: '#E24F55'
   },
+  generate:{
+    dir: "dist"
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'chinese-learning-house',
@@ -27,7 +30,7 @@ export default {
       console.log(JSON.stringify(routes))
       return routes;
     },
-    base: process.env.NODE_ENV === "production"? "/clh":"/"
+    base: process.env.NODE_ENV === "production"? "/":"/"
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
