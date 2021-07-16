@@ -1,6 +1,6 @@
 <template>
-  <div class="w-screen h-screen flex-col flex">
-    <div class="w-screen shadow-2xl bg-white px-2 py-6">
+  <div class="tw-w-screen h-screen flex-col flex">
+    <div class="tw-w-screen shadow-2xl bg-white tw-px-2 py-6">
       <div
         class='font-bolder text-2xl cursor-pointer'
         @click="$nuxt.$router.push('/')"

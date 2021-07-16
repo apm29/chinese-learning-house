@@ -1,27 +1,27 @@
 <template>
  <div>
    <div v-for='article of articles' :key='article.path'
-        class='px-4 md:px-0'>
-     <article class='text-left flex-col flex prose items-stretch'>
-       <h3 class='hover:cursor-pointer hover:text-red-600'
+        class='tw-px-4 md:tw-px-0'>
+     <article class='tw-text-left tw-flex-col tw-flex tw-prose tw-items-stretch'>
+       <h3 class='hover:tw-cursor-pointer hover:tw-text-red-500'
            @click='$router.push({name:"index-post-path",params:{path:article.path}})'>{{ article.title }}</h3>
-       <p v-if='article.text' class='font-light'>
+       <p v-if='article.text' class='tw-font-normal'>
          {{ article.text.substr(0, 300) }}...
        </p>
        <p v-if='article.toc'>
          <template v-for='toc of article.toc.slice(0,5)'>
                 <span
                   v-if='toc.text' :key='toc.id'
-                  class='mr-1 hover:underline hover:cursor-pointer'
+                  class='tw-mr-1 hover:tw-underline hover:tw-cursor-pointer'
                   @click='$router.push({name:"category-category",params:{category:toc.text}})'
                 >
                 #{{ toc.text }}
               </span>
          </template>
        </p>
-       <time class='self-end'>{{ article.createdAt | filterTime }}</time>
+       <time class='tw-self-end'>{{ article.createdAt | filterTime }}</time>
      </article>
-     <hr class='my-4' />
+     <hr class='tw-my-4' />
    </div>
  </div>
 </template>

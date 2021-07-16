@@ -1,13 +1,13 @@
 <template>
-  <div class='banner w-full overflow-hidden md:h-96 h-72 bg-gray-600 relative'>
+  <div class='banner tw-w-full tw-overflow-hidden md:tw-h-96 tw-h-72 tw-bg-gray-600 tw-relative'>
     <div ref='slide' class='swiper-wrapper'>
       <div
         v-for='image of images'
         :key='image.url'
         :style='{backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${image.url})`,backgroundSize:"100% auto"}'
-        class='swiper-slide object-cover bg-no-repeat overflow-x-hidden'
+        class='swiper-slide tw-object-cover tw-bg-no-repeat tw-overflow-x-hidden'
       >
-        <h2 class='select-none uppercase absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 text-3xl md:text-6xl font-bold text-white'>{{image.title}}</h2>
+        <h2 class='tw-select-none tw-uppercase tw-absolute tw-top-1/2 tw-left-1/2 tw-transform tw--translate-y-1/2 tw--translate-x-1/2 tw-text-3xl md:tw-text-6xl tw-font-bold tw-text-white'>{{image.title}}</h2>
       </div>
     </div>
     <div class="swiper-button-next"></div>
@@ -103,12 +103,12 @@ export default {
 }
 .swiper-button-next {
   --swiper-navigation-size: 1.5rem;
-  @apply text-purple-300;
+  @apply tw-text-purple-300;
 }
 
 .swiper-button-prev {
   --swiper-navigation-size: 1.5rem;
-  @apply text-purple-300
+  @apply tw-text-purple-300
 }
 .banner .animate-pulse-once{
   animation:pulse-once 1.4s  ease-in 0s 1 normal none running ;

@@ -1,5 +1,11 @@
+const colors = require("tailwindcss/colors");
 module.exports = {
-  theme: {},
+  theme: {
+    rotate: {
+      '-24': '-24deg',
+    }
+  },
+  prefix:"tw-",
   purge: {
     content: [
       `components/**/*.{vue,js}`,
@@ -202,6 +208,32 @@ module.exports = {
       width: ["responsive"],
       wordBreak: ["responsive"],
       zIndex: ["responsive", "focus-within", "disabled", "focus"],
+    },
+    colors: {
+      // Build your palette here
+      red: colors.red,
+      green: colors.green,
+      blue: colors.blue,
+      gray: colors.gray,
+      pink: colors.pink,
+      purple: colors.purple,
+      indigo: colors.indigo,
+      yellow: colors.yellow,
+      black: colors.black,
+      white: colors.white,
+      blueGray: colors.blueGray,
+      coolGray: colors.coolGray,
+      trueGray: colors.trueGray,
+      warmGray: colors.warmGray,
+      amber: colors.amber,
+      lime: colors.lime,
+      emerald: colors.emerald,
+      teal: colors.teal,
+      cyan: colors.cyan,
+      lightBlue: colors.lightBlue,
+      violet: colors.violet,
+      fuchsia: colors.fuchsia,
+      rose: colors.rose,
     },
   },
   plugins: [

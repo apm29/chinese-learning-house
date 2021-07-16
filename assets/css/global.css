@@ -53,4 +53,5 @@
 
 html{
     font-family: "Helvetica Neue", Arial, sans-serif;
+    overflow: auto !important;
 }

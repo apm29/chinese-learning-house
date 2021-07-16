@@ -2,9 +2,9 @@
   <div>
     <div class='bg-white flex flex-col items-center' style='height: 3000px'>
       <PostTop />
-      <div class='flex pt-12 w-screen md:w-4/5'>
+      <div class='flex pt-12 tw-w-screen md:w-4/5'>
         <CompanyModule />
-        <div v-if='articles' class='flex flex-col items-stretch  w-screen md:w-4/5 overflow-x-hidden'>
+        <div v-if='articles' class='flex flex-col items-stretch  tw-w-screen md:w-4/5 overflow-x-hidden'>
           <ArticleModule :articles='articles' />
         </div>
       </div>
