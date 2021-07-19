@@ -1,10 +1,10 @@
 <template>
-  <div class='tw-bg-white tw-relative tw-flex tw-flex-col tw-items-center'>
+  <div class='contact-page__wrapper'>
     <div class='bg-light__lower'>
     </div>
     <div class='bg-light__upper'>
     </div>
-    <div class='tw-px-32 tw-py-16 tw-mt-16 tw-transform tw-text-center tw-skew-x-0  tw-w-full md:tw-w-1/2'>
+    <div class='lg:tw-px-32 tw-px-4 tw-py-16 tw-mt-16 tw-transform tw-text-center tw-skew-x-0  tw-w-full lg:tw-w-1/2'>
       <h2 class='tw-text-3xl tw-text-white'>Contact Us</h2>
       <div class='tw-text-lg tw-text-white tw-my-6'>Get in touch with our team to discuss your plan.</div>
       <div class='tw-grid tw-grid-cols-2 tw-gap-4'>
@@ -23,7 +23,7 @@
       </div>
       <v-btn class='tw-mt-10' dark>Submit</v-btn>
     </div>
-    <div class='tw-grid tw-grid-cols-3 tw-mt-16 tw-gap-6 tw-w-full tw-px-32 tw-transform tw-skew-x-0'>
+    <div class='tw-grid lg:tw-grid-cols-3 tw-grid-cols-1 tw-mt-16 tw-gap-6 tw-w-full lg:tw-px-32 tw-px-4 tw-transform tw-skew-x-0'>
       <div class='price-card__body'>
         <img alt='price1' src='processing.svg' />
         <div class='price-card__desc'>
@@ -68,84 +68,126 @@ export default {
 }
 </script>
 
-<style scoped>
-.bg-light__lower {
-  height: 105vh;
-  width: 150vw;
-  @apply
-  tw-bg-gradient-to-r
-  tw-absolute
-  tw-transform
-  tw--rotate-24
-  tw-skew-x-12
-  tw--top-1/3
-  tw--left-1/4
-  tw-from-blue-100
-  tw-to-purple-100;
-}
+<style scoped lang='scss'>
+.contact-page__wrapper {
+  @apply tw-bg-white tw-relative  tw-flex tw-flex-col tw-items-center tw-overflow-x-hidden;
+  @media (min-width: 768px) {
 
-.bg-light__upper {
-  height: calc(105vh - 30px);
-  width: calc(150vw - 30px);
-  margin-left: 20px;
-  @apply
-  tw-bg-gradient-to-r
-  tw-absolute
-  tw-transform
-  tw--rotate-24
-  tw-skew-x-12
-  tw--top-1/3
-  tw--left-1/4
-  tw-from-blue-400
-  tw-to-purple-600;
-}
+    .bg-light__lower {
+      --height: 105vh;
+      --width: 150vh;
+      height: 80%;
+      width: 160%;
+      @apply
+      tw-bg-gradient-to-r
+      tw-absolute
+      tw-transform
+      tw--rotate-24
+      tw-skew-x-12
+      tw--top-1/3
+      tw--left-1/4
+      tw-from-blue-100
+      tw-to-purple-100;
+    }
 
-.input-transparent__main {
-  @apply
-  tw-outline-none
-  tw-border-none
-  tw-ring-0
-  focus:tw-ring-2
-  focus:tw-ring-purple-800
-  tw-rounded
-  tw-text-white
-  tw-bg-gray-200
-  tw-bg-opacity-25
-  tw-px-3
-  tw-py-2
-  tw-w-full
-}
+    .bg-light__upper {
+      --height: 105vh;
+      --width: 150vh;
+      height: 80%;
+      width: 160%;
+      margin-left: 20px;
+      margin-bottom: 20px;
+      @apply
+      tw-bg-gradient-to-r
+      tw-absolute
+      tw-transform
+      tw--rotate-24
+      tw-skew-x-12
+      tw--top-1/3
+      tw--left-1/4
+      tw-from-blue-400
+      tw-to-purple-600;
+    }
+  }
 
-input::placeholder {
-  @apply tw-text-gray-100
-}
+  @media (max-width: 769px) {
+    .bg-light__lower {
+      @apply
+      tw-bg-gradient-to-r
+      tw-absolute
+      tw--top-0
+      tw--left-0
+      tw-from-blue-100
+      tw-to-purple-100
+      tw-w-full
+      tw-h-full;
+    }
+    .bg-light__upper{
+      @apply
+      tw-bg-gradient-to-r
+      tw-absolute
+      tw--top-0
+      tw--left-0
+      tw-from-blue-400
+      tw-to-purple-600
+      tw-w-full
+      tw-h-full;
+    }
+  }
 
-.price-card__body {
-  @apply
-  tw-rounded-2xl
-  tw-shadow-lg
-  tw-bg-white
-  tw-overflow-visible
-  tw-flex
-  tw-flex-col
-  tw-items-center
-  tw-pb-12;
-}
-.price-card__body > img{
-  @apply tw-w-2/3 tw-transform tw--translate-y-16 tw-h-64
-}
-.price-card__price{
-  @apply
-  tw-text-3xl
-  tw-font-extrabold
-  tw-my-4;
-}
-.price-card__desc{
-  @apply
-  tw-font-light
-  tw-text-xl
-  tw-text-gray-700
-  tw-px-8
-  tw-flex-grow;
+
+
+
+
+  .input-transparent__main {
+    @apply
+    tw-outline-none
+    tw-border-none
+    tw-ring-0
+    focus:tw-ring-2
+    focus:tw-ring-purple-800
+    tw-rounded
+    tw-text-white
+    tw-bg-gray-200
+    tw-bg-opacity-25
+    tw-px-3
+    tw-py-2
+    tw-w-full
+  }
+
+  input::placeholder {
+    @apply tw-text-gray-100
+  }
+
+  .price-card__body {
+    @apply
+    tw-rounded-2xl
+    tw-shadow-lg
+    tw-bg-white
+    tw-overflow-visible
+    tw-flex
+    tw-flex-col
+    tw-items-center
+    tw-pb-12
+    tw-mt-6
+    md:tw-mt-2;
+  }
+  .price-card__body > img{
+    @apply tw-w-2/3 tw-transform tw--translate-y-16 tw-h-64
+  }
+  .price-card__price{
+    @apply
+    tw-text-3xl
+    tw-font-extrabold
+    tw-my-4;
+  }
+  .price-card__desc{
+    @apply
+    tw-font-light
+    tw-text-xl
+    tw-text-gray-700
+    tw-px-8
+    tw-flex-grow;
+  }
 }
 </style>

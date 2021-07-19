@@ -1,6 +1,6 @@
 <template>
   <div class='banner tw-w-full tw-overflow-hidden md:tw-h-96 tw-h-72 tw-bg-gray-600 tw-relative'>
-    <div ref='slide' class='swiper-wrapper'>
+    <div ref='slide' class='swiper-wrapper tw-w-full'>
       <div
         v-for='image of images'
         :key='image.url'

@@ -15,6 +15,7 @@ module.exports = {
     'vue/component-definition-name-casing': 'off',
     'no-console': 'off',
     'import/no-named-as-default': 'off',
+    'vue/require-default-prop': 'off',
     'no-new': 'off',
     'import/namespace': 'off',
     'object-shorthand': 'off',
