@@ -1,7 +1,7 @@
 <template>
   <div class='flex-container'>
     <img class='tw-w-28 tw-h-28 tw-rounded' src='http://jiayupearl.shop/avatar/default.png'>
-    <div class='tw-font-light tw-text-xl tw-py-4'>Learn Chinese On Tour</div>
+    <div class='tw-font-light tw-text-xl tw-py-4'>旅学中文</div>
   </div>
 </template>
 <script>

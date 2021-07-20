@@ -1,8 +1,8 @@
 <template>
   <div class='flex-container'>
     <div class='tw-text-sm tw-text-gray-300 tw-mt-8'>Copy right 2021</div>
-    <div class='tw-text-sm tw-text-gray-300'>Learn Chinese On Tour</div>
-    <div class='tw-text-sm tw-mt-10 tw-text-gray-600'>浙ICP备20011000号-1</div>
+    <div class='tw-text-sm tw-text-gray-300'>旅学中文</div>
+<!--    <div class='tw-text-sm tw-mt-10 tw-text-gray-600'>浙ICP备20011000号-1</div>-->
   </div>
 </template>
 <script>
