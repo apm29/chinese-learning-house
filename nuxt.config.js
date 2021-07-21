@@ -69,7 +69,23 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: 'http://localhost:4000', // Used as fallback if no runtime config is provided
+  },
+
+  // server 和 浏览器的配置
+  publicRuntimeConfig: {
+    axios: {
+      browserBaseURL: process.env.NODE_ENV === "production"? "/":"http://118.195.173.182/"
+    }
+  },
+
+  // server端配置,会覆盖 publicRuntimeConfig
+  privateRuntimeConfig: {
+    axios: {
+      baseURL:  process.env.NODE_ENV === "production"? "http://172.17.0.1:9998/":"http://118.195.173.182/"
+    }
+  },
 
 
   // Content module configuration: https://go.nuxtjs.dev/config-content

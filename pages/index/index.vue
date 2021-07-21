@@ -27,6 +27,7 @@
           </div>
         </v-img>
       </div>
+      {{ res }}
     </div>
 
     <ContactSliver />
@@ -40,6 +41,15 @@ import ContactSliver from '~/components/ContactSliver'
 export default {
   name: 'index',
   components: { ContactSliver, ImageBanner },
+
+  async asyncData({ $axios }) {
+    const res = await $axios.$post("java/user/test")
+    console.log(res)
+    return {
+      res
+    }
+  },
+
   data() {
     return {
       images: [
@@ -86,6 +96,17 @@ export default {
       ]
     }
   },
+
+  mounted() {
+    console.log(this.$axios)
+    this.$axios.$post("java/user/test")
+    .then(res=>{
+      console.log(res)
+    })
+    .catch(err=>{
+      console.error(err)
+    })
+  },
   methods: {
     toLink(url) {
       window.location.href = url
@@ -115,9 +136,5 @@ export default {
   100% {
     filter: none;
   }
-}
-
-.img {
-  background: ;
 }
 </style>
