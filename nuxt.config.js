@@ -44,7 +44,8 @@ export default {
   plugins: [
     {
       src: "~plugins/filters.js"
-    }
+    },
+    "~plugins/axios"
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -66,6 +67,8 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/toast',
+    '@nuxtjs/dayjs'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -85,6 +88,24 @@ export default {
     axios: {
       baseURL:  process.env.NODE_ENV === "production"? "http://172.17.0.1:9998/":"http://118.195.173.182/"
     }
+  },
+
+  toast: {
+    position: 'top-center',
+    duration: 6000,
+    keepOnHover: true,
+    closeOnSwipe: true
+  },
+
+  // Optional
+  dayjs: {
+    locales: ['zh'],
+    defaultLocale: 'zh',
+    defaultTimeZone: 'Asia/Shanghai',
+    plugins: [
+      'utc', // import 'dayjs/plugin/utc'
+      'timezone' // import 'dayjs/plugin/timezone'
+    ] // Your Day.js plugin
   },
 
 

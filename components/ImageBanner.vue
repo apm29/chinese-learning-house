@@ -6,6 +6,7 @@
         :key='image.url'
         :style='{backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${image.url})`,backgroundSize:"100% auto"}'
         class='swiper-slide tw-object-cover tw-bg-no-repeat tw-overflow-x-hidden'
+        @click='$toast.success(image.url)'
       >
         <h2 class='tw-select-none tw-uppercase tw-absolute tw-top-1/2 tw-left-1/2 tw-transform tw--translate-y-1/2 tw--translate-x-1/2 tw-text-3xl md:tw-text-6xl tw-font-bold tw-text-white'>{{image.title}}</h2>
       </div>
