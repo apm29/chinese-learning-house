@@ -27,7 +27,6 @@
           </div>
         </v-img>
       </div>
-      {{ res }}
     </div>
 
     <ContactSliver />
@@ -42,15 +41,6 @@ export default {
   name: 'index',
   components: { ContactSliver, ImageBanner },
 
-  async asyncData({ $axios, $dayjs }) {
-    const res = await $axios.$post("java/user/test")
-    console.log(res)
-
-    console.log($dayjs().format('YYYY-MM'))
-    return {
-      res
-    }
-  },
 
   data() {
     return {
